@@ -1,10 +1,12 @@
 <script>
 // @ts-nocheck
+import {requestPermission} from './firebase-messaging-sw'
 
 </script>
 
 <div class="flex h-screen items-center justify-center safe-top safe-left safe-right safe-bottom disable-scrollbars select-none">
-  <h1 class="font-bold">Kertas Putih</h1>
+  <button class="rounded-full px-2 py-1 bg-emerald-500 text-white font-bold" on:click={() => requestPermission()}>Aktifkan</button>
+  
 </div>
 <style>
 

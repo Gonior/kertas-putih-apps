@@ -1,5 +1,9 @@
 {
     "theme_color": "#5B31CE",
+    "gcm_sender_id":"966320458850",
+    "apiKey": "AIzaSyAcoNrGFEnv-Mp92DvEp7Q1S9KKCi9R0Ok",
+    "projectId":"kertas-putih",
+    "appId":"1:966320458850:web:39cff37304a4b07c00953b",
     "version": "1.0.5",
     "background_color": "#5B31CE",
     "display": "standalone",
@@ -7,7 +11,7 @@
     "start_url": "/index.html",
     "orientation": "portrait",
     "name": "Kertas Putih Apps",
-    "short_name": "KPA",
+    "short_name": "Kertas Putih",
     "description": "Aplikasi ini untuk Sistem Reservasi di RM Sangkan Hurip",
     "icons": [
         {
