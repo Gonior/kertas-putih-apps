@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="favicon.png">
+    <meta name='viewport' content='width=device-width,initial-scale=1,user-scalable=no,height=device-height, viewport-fit=cover'>
+    <title>Kertas Putih</title>
+    <!-- <link rel='icon' type='image/png' href='/favicon.png'> -->
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+    <script>
+      	if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('sw.js').then(function(registration) {
+            console.log('SW registration succeeded with scope:', registration.scope);
+          }).catch(function(e) {
+            console.log('SW registration failed with error:', e);
+          });
+        }
+    </script>
+  </body>
+</html>
