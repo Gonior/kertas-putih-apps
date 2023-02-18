@@ -14,21 +14,26 @@ const firebaseConfig = {
 
 
 // Initialize Firebase
+const app = initializeApp(firebaseConfig);
+  
+const messaging = getMessaging(app)
 
+onMessage(messaging, (payload) => {
+  console.log('Message received. ', payload);
+  // ...
+});
 
 export const requestPermission = () => {
+    alert("btn clicked.. you can see it??")
     console.log('Requesting permission...');
     Notification.requestPermission().then((permission) => {
       if (permission === 'granted') {
         console.log('Notification permission granted.');
-        const app = initializeApp(firebaseConfig);
-  
-        const messaging = getMessaging(app)
-  
+
         getToken(messaging,{vapidKey : "BDkoLqmAtG4JFdVYRyJrgfs-XJIRGtUJJtzzggXkST0whvoVCKjMYpCf_Fxn8huJUcQfpuD-FV_JeRk7B0gi8iM"}).then((currentToken) => {
             if (currentToken) {
               // Send the token to your server and update the UI if necessary
-              console.log({currentToken})
+              console.log("currentToken", currentToken)
             } else {
               // Show permission request UI
               console.log('No registration token available. Request permission to generate one.');
@@ -38,11 +43,6 @@ export const requestPermission = () => {
             console.log('An error occurred while retrieving token. ', err);
             // ...
           });
-  
-        onMessage(messaging, (payload) => {
-            console.log('Message received. ', payload);
-            // ...
-        });
 
       } else console.log('Notification permission denied.');
     })
