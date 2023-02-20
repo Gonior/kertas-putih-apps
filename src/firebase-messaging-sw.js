@@ -23,8 +23,8 @@ onMessage(messaging, (payload) => {
   // ...
 });
 
-export const requestPermission = () => {
-    alert("btn clicked.. you can see it??")
+export const requestPermission = (cb) => {
+    
     console.log('Requesting permission...');
     Notification.requestPermission().then((permission) => {
       if (permission === 'granted') {
@@ -33,12 +33,12 @@ export const requestPermission = () => {
         getToken(messaging,{vapidKey : "BDkoLqmAtG4JFdVYRyJrgfs-XJIRGtUJJtzzggXkST0whvoVCKjMYpCf_Fxn8huJUcQfpuD-FV_JeRk7B0gi8iM"}).then((currentToken) => {
             if (currentToken) {
               // Send the token to your server and update the UI if necessary
-              console.log("currentToken", currentToken)
-              return currentToken;
+              // console.log("currentToken", currentToken)
+              cb(currentToken)
             } else {
               // Show permission request UI
               console.log('No registration token available. Request permission to generate one.');
-              return null
+              cb(null)
               // ...
             }
           }).catch((err) => {
