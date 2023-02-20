@@ -34,14 +34,17 @@ export const requestPermission = () => {
             if (currentToken) {
               // Send the token to your server and update the UI if necessary
               console.log("currentToken", currentToken)
+              return currentToken;
             } else {
               // Show permission request UI
               console.log('No registration token available. Request permission to generate one.');
+              return null
               // ...
             }
           }).catch((err) => {
             console.log('An error occurred while retrieving token. ', err);
             // ...
+            return
           });
 
       } else console.log('Notification permission denied.');
