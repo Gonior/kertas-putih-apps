@@ -3,10 +3,10 @@ const plugin = require('tailwindcss/plugin')
 module.exports = {
   content: ['./public/index.html','./src/**/*.{html,js,svelte,ts}'],
   theme: {
+    
     extend: {
       transitionProperty: {
-        'height': 'height',
-        "width" : "width"
+        height: 'height'
       },
       keyframes: {
         boom: {
@@ -21,8 +21,7 @@ module.exports = {
         }
       },
       animation: {
-        boom: "boom 200ms ease-in-out",
-        blink : "blink 1s  infinite"
+        blink : " 1s infinite"
       }
     },
   },
